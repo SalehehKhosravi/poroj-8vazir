@@ -1,3 +1,4 @@
+
 class EightQueensGA:
      
       def random_solution(self):    #لیستی از موقعیت وزیرها    
