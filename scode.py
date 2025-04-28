@@ -18,3 +18,10 @@ class EightQueensGA:
                 if solution[i] == solution[j] or abs(solution[i] - solution[j]) == j - i: #بررسی تداخل
                     clashes += 1
         return 28 - clashes  # برازندگی حداکثر 28 برای 8 وزیر
+
+     def select_parents(self):
+        """ انتخاب والدین برای تولیدنسل بعد  ."""
+        fitness_scores = [(self.calculate_fitness(sol), sol) for sol in self.population]
+        fitness_scores.sort(key=lambda x: x[0], reverse=True)
+        selected = [sol for _, sol in fitness_scores[:self.population_size // 2]]
+        return selected
